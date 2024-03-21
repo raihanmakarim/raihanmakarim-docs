@@ -1,15 +1,16 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
+  "index": {
+    "title": "soar",
+    "type": "page",
+    "display": "hidden"
+  },
+
+  "DSA": {
+    "title": "DSA",
     "type": "page"
   },
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
+  "SOAR": {
+    "title": "SOAR",
+    "type": "page"
   }
 }
