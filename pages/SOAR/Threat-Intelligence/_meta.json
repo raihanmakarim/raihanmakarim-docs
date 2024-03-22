@@ -5,9 +5,7 @@
   "integration": {},
   "usecases": {},
   "challenges": {},
-  "misp": {},
-  "misp-installation": {},
-  "misp-mechanism": {},
-  "misp-feature": {},
-  "misp-security": {}
+  "MISP": {
+    "title": "MISP"
+  }
 }
