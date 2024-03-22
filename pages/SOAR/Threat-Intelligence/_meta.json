@@ -4,5 +4,10 @@
   "technique": {},
   "integration": {},
   "usecases": {},
-  "challenges": {}
+  "challenges": {},
+  "misp": {},
+  "misp-installation": {},
+  "misp-mechanism": {},
+  "misp-feature": {},
+  "misp-security": {}
 }
