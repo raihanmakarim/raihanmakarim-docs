@@ -1,0 +1,61 @@
+---
+title:  Overview of Feeds, Events, Galaxies, and Relationships
+---
+
+# MISP (Malware Information Sharing Platform) - Overview of Feeds, Events, Galaxies, and Relationships
+
+## Introduction
+
+MISP (Malware Information Sharing Platform) is an open-source threat intelligence platform designed to facilitate the sharing of structured threat information among organizations. It provides a comprehensive framework for storing, sharing, and analyzing indicators of compromise (IOCs), malware samples, and other security-related data. Central to the functionality of MISP are its feeds, events, galaxies, and relationships. In this document, we will delve into each of these components in detail.
+
+## MISP Feeds
+
+MISP feeds are repositories of threat intelligence data curated by various organizations and security researchers. These feeds contain a wide range of information such as malware hashes, IP addresses, domain names, and more. MISP allows users to subscribe to these feeds, automatically pulling in the latest threat intelligence data to enrich their own repositories.
+
+### Key Features of MISP Feeds:
+
+1. **Automated Enrichment**: MISP can automatically fetch and integrate threat intelligence feeds, keeping the platform up-to-date with the latest indicators of compromise.
+
+2. **Custom Feeds**: Users can create custom feeds tailored to their specific requirements, enabling them to share proprietary threat intelligence within their organization or with trusted partners.
+
+3. **Feed Synchronization**: MISP supports feed synchronization, allowing organizations to share their curated feeds with other MISP instances, fostering collaborative threat intelligence sharing efforts.
+
+## MISP Events
+
+MISP events represent specific incidents, observations, or campaigns within the platform. An event typically contains a collection of attributes that describe various aspects of the threat, such as file hashes, IP addresses, email addresses, and more. Events serve as containers for organizing and analyzing related threat data.
+
+### Key Features of MISP Events:
+
+1. **Structured Data**: Events in MISP are structured using a predefined data model, enabling standardized representation and analysis of threat intelligence data.
+
+2. **Flexible Taxonomies**: MISP supports flexible taxonomies that allow users to tag and categorize events based on predefined classification schemes, such as the MITRE ATT&CK framework.
+
+3. **Collaborative Analysis**: Multiple users can collaborate on analyzing and enriching events within MISP, facilitating knowledge sharing and collective threat assessment.
+
+## MISP Galaxies
+
+MISP galaxies are a concept introduced to represent relationships between various elements in threat intelligence data. Galaxies provide a framework for organizing and contextualizing threat data by defining relationships between different attributes, entities, and events.
+
+### Key Features of MISP Galaxies:
+
+1. **Graphical Representation**: Galaxies are often represented graphically, allowing users to visualize and explore relationships between different elements in threat intelligence data.
+
+2. **Interconnectivity**: Galaxies enable the mapping of complex relationships between different threat entities, providing insights into the broader context of security incidents.
+
+3. **Community Contributions**: MISP encourages community contributions to galaxies, allowing users to extend and enrich the existing set of relationships based on their own observations and analysis.
+
+## Relationships in MISP
+
+Relationships in MISP represent connections between various attributes, events, and entities within the platform. These relationships provide context and facilitate the correlation of disparate pieces of threat intelligence data, helping analysts identify patterns and understand the broader threat landscape.
+
+### Key Aspects of Relationships in MISP:
+
+1. **Directed Relationships**: Relationships in MISP are directed, meaning they indicate the directionality of the connection between two entities. For example, a relationship may indicate that an IP address was observed communicating with a specific domain.
+
+2. **Granular Control**: MISP provides granular control over relationships, allowing users to specify the type and strength of the relationship between different entities. This enables nuanced analysis and interpretation of threat data.
+
+3. **Correlation and Analysis**: Relationships play a crucial role in correlating and analyzing threat intelligence data within MISP, helping analysts uncover patterns, identify malicious infrastructure, and assess the scope of security incidents.
+
+## Conclusion
+
+MISP provides a powerful platform for sharing, analyzing, and contextualizing threat intelligence data. By leveraging feeds, events, galaxies, and relationships, organizations can collaborate effectively to mitigate cyber threats and enhance their security posture. Understanding these core components is essential for making the most of MISP's capabilities in threat intelligence sharing and analysis.

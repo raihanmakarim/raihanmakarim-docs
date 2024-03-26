@@ -3,5 +3,6 @@
   "misp-installation": {},
   "misp-mechanism": {},
   "misp-feature": {},
-  "misp-security": {}
+  "misp-security": {},
+  "misp-components": {}
 }
