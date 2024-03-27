@@ -1,0 +1,56 @@
+# MISP REST API
+
+## Overview
+
+The MISP REST API provides an easy way to query, add, and update threat intelligence data within MISP. Developed by the CIRCL Team, the MISP Project aims to improve threat intelligence sharing and collaboration. The API has undergone significant rework to address issues with usability, functionality, and performance.
+
+## Evolution of the MISP API
+
+### Initial Challenges
+- UI-first design led to fragmented API endpoints with specific rulesets.
+- Organic growth resulted in disparate endpoints for different functionalities.
+- Legacy tools relied heavily on URL parameters, leading to complexity.
+
+### Goals
+- Open up all UI functionalities to the API, including instance management.
+- Ensure APIs are self-describing for data creation.
+- Encourage usage of JSON objects over URL parameters (deprecation).
+- Implement extensive testing to ensure reliability.
+
+## Reimagined Export APIs
+
+### Consolidation
+- Existing type-specific APIs were deprecated and replaced with a single entry point: `restSearch`.
+- Queries now consist of scope (Event, Attribute, Sighting), filter parameters, and return format.
+
+### Pagination
+- Implemented scope-specific pagination for better control.
+- Improved time-based controls for timestamp and publish_timestamp windows.
+
+## Performance Tuning
+
+- Single execution with subqueries to optimize performance.
+- Internal pagination aligned with memory limits to manage memory usage.
+- Export set constructed on disk in chunks to reduce memory usage.
+
+## Development Tools
+
+- Built-in ReST client with templating for easy query building.
+- Extensive query builder UI simplifies query construction.
+- Export queries as cURL or Python scripts for automation.
+- Testing tools for performance measurement and result parsing.
+
+## Focus on Search API
+
+- Increased emphasis on search API due to improved threat intel sharing.
+- Ability to share more context along with technical indicators enhances data management.
+- Allows for precise data selection using multiple queries and boolean operators.
+
+## CLI Tools
+
+- CLI tools for common system management tasks such as server/feeds syncing, password resets, and worker management.
+- Goal to move away from malfunctioning scheduler to cron-friendly CLI scripts.
+
+## Conclusion
+
+The MISP REST API provides a comprehensive solution for managing threat intelligence data, offering enhanced functionality, performance, and usability. Through continuous improvement and community collaboration, MISP aims to facilitate effective threat intelligence sharing and analysis.

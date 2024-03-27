@@ -4,5 +4,7 @@
   "misp-mechanism": {},
   "misp-feature": {},
   "misp-security": {},
-  "misp-components": {}
+  "misp-components": {},
+  "misp-api": {},
+  "misp-best-practice": {}
 }

@@ -1,0 +1,65 @@
+# Best Practices in Threat Intelligence with MISP
+
+## Overview
+
+The MISP (Malware Information Sharing Platform & Threat Sharing) Project provides a robust platform for gathering, documenting, analyzing, and contextualizing threat intelligence data. This MDX file summarizes best practices in threat intelligence leveraging MISP.
+
+## Objectives
+
+- Learn how to utilize MISP for common OSINT (Open-Source Intelligence) gathering use-cases.
+- Improve data models in MISP by exchanging live improvements and ideas.
+- Share the results with the community.
+- Utilize practical exercises based on recent cases to model and structure intelligence using the MISP standard.
+
+## (Threat) Intelligence
+
+- Cyber threat intelligence (CTI) encompasses various concepts, methods, and workflows.
+- MISP allows flexibility in intelligence modeling to suit organizational objectives.
+- Pre-defined knowledge bases and data models are available in MISP.
+
+## Meta Information and Contextualization
+
+- Quality indicators are crucial, but tagging and classification are equally important.
+- MISP utilizes tags from taxonomy libraries for organizing intelligence.
+- Galaxies provide a vast set of common libraries for contextualization.
+
+## Estimative Probability
+
+- Estimative language proposes clear wording for estimating probability.
+- MISP's estimative-language taxonomy offers an applied model for tagging information.
+
+## Reliability, Credibility, and Confidence
+
+- The Admiralty Scale (NATO System) ranks source reliability and information credibility.
+- MISP's admiralty-scale taxonomy assists in ranking reliability.
+- US DoD JP 2-0 includes confidence assessment guidelines, available in MISP.
+
+## Adding Attributes/Objects to an Event
+
+- Single atomic elements are represented with attributes.
+- Choosing the right attribute type is critical.
+- Composite information is represented with objects.
+
+## How to Select the Right Object?
+
+- MISP offers over 150 object templates.
+- Object selection depends on the use case and data complexity.
+
+## Examples of MISP Objects
+
+### Microblog Object
+
+- Use case: Structuring OSINT tweets from a security researcher.
+- Object: Microblog object for tweets or microblog posts.
+
+### File Object
+
+- Use case: Describing file samples received via email or extracted from VirusTotal.
+- Object: File object for describing files and associated metadata.
+
+## References
+
+- [Graphical overview of OSINT collection using MISP](https://github.com/adulau/misp-osint-collection)
+- [MISP objects documentation](https://www.misp-project.org/objects.html)
+- [MISP taxonomies documentation](https://www.misp-project.org/taxonomies.html)
+- [MISP galaxy documentation](https://www.misp-project.org/galaxy.html)
