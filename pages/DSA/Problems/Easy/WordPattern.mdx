@@ -1,0 +1,81 @@
+# Words Pattern
+
+Given a pattern and a string s, find if s follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
+
+ 
+
+```js
+
+Example 1:
+
+Input: pattern = "abba", s = "dog cat cat dog"
+Output: true
+Example 2:
+
+Input: pattern = "abba", s = "dog cat cat fish"
+Output: false
+Example 3:
+
+Input: pattern = "aaaa", s = "dog cat cat dog"
+Output: false
+ 
+
+Constraints:
+
+1 <= pattern.length <= 300
+pattern contains only lower-case English letters.
+1 <= s.length <= 3000
+s contains only lowercase English letters and spaces ' '.
+s does not contain any leading or trailing spaces.
+All the words in s are separated by a single space.
+
+```
+
+## solution
+
+im using hash map to solve this problem, because somekind of data structure when we can efficiently get an element based on a key is needed especially because this problem probably require somekind of memorization of a value that we can quickly check into in which i choose a has map in the form of object to kind of link the word and the letter. in which, when we find a mismatch on the hash map we can conclude that the pattern is not matching hence return false.
+at first, my solution is not correct because im only using 1 object based on the letter, because there can be a case of 2 letter that linked to the same word. in which i use 2 object that check letter > word and vice versa to avoid this.
+
+
+
+```js
+
+/**
+ * @param {string} pattern
+ * @param {string} s
+ * @return {boolean}
+ */
+var wordPattern = function(pattern, s) {
+    //link a word to a letter
+    const check = {};
+    const check2 = {};
+    const arr = s.split(" ");
+
+    if( pattern.length !== arr.length){
+        return false
+    }
+
+    for (let i = 0 ; i<= pattern.length - 1 ; i++){
+        if(!check.hasOwnProperty(pattern[i])){
+            check[pattern[i]] = arr[i]
+        }else if(check[pattern[i]] !== arr[i]){
+           return false
+        }
+        if(!check2.hasOwnProperty(arr[i])){
+            check2[arr[i]] = pattern[i]
+        }else if(check2[arr[i]] !== pattern[i]){
+           return false
+        }
+
+
+    }
+
+    return true
+    
+};
+```
+
+## improvement
+even though this algorithm have the time complexity of (O)n, we can probably improve the time performance based on reducing the overhead and the operations.
