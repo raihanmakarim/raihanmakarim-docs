@@ -1,0 +1,150 @@
+---
+title: User Guide for Feeds, Events, Relations, and Galaxies & integration with suricata
+---
+
+# User Guide for Feeds, Events, Relations, and Galaxies
+
+This guide will walk you through the process of adding, getting, and utilizing feeds, events, relations, and galaxies in your application.
+
+## Adding Feeds
+
+To add feeds to your application, follow these steps:
+
+1. Identify the source of the feed you want to add.
+2. Obtain the URL of the feed.
+3. In your application, navigate to the feed management section.
+4. Select the option to add a new feed.
+5. Paste the URL of the feed into the designated field.
+6. Optionally, configure any additional settings such as update frequency or feed name.
+7. Save the changes.
+
+## Getting Feeds
+
+Once you have added feeds to your application, you can retrieve their content by following these steps:
+
+1. Access the feed management section of your application.
+2. Locate the feed you want to retrieve content from.
+3. Use the provided functionality to fetch the latest content from the feed.
+4. Process the retrieved content according to your application's requirements.
+
+## Downloading Feeds
+
+Downloading feeds involves retrieving the content of the feed and storing it locally. Follow these steps to download feeds:
+
+1. Follow the steps for getting feeds to retrieve the content.
+2. Save the retrieved content to a local storage location.
+3. Optionally, perform any additional processing or analysis on the downloaded content.
+
+## Adding Events
+
+Events can be added to your application to represent occurrences or incidents. Here's how you can add events:
+
+1. Navigate to the event management section of your application.
+2. Choose the option to add a new event.
+3. Fill in the relevant details such as event name, description, and date/time.
+4. Save the event.
+
+## Utilizing Events
+
+Once events are added to your application, you can utilize them in various ways:
+
+1. Display events on a calendar for users to view.
+2. Generate reports based on event data.
+3. Trigger notifications or alerts based on specific events.
+4. Analyze event trends over time.
+
+## Adding Relations
+
+Relations establish connections between different entities in your application. Follow these steps to add relations:
+
+1. Access the relation management section of your application.
+2. Choose the option to add a new relation.
+3. Specify the entities you want to connect and the type of relation between them.
+4. Save the relation.
+
+## Getting Relations
+
+To retrieve relations from your application, follow similar steps as getting feeds. Access the relation management section and retrieve the desired relations based on your criteria.
+
+## Utilizing Relations
+
+Utilize relations in your application to:
+
+1. Enhance data querying capabilities.
+2. Establish hierarchical structures.
+3. Analyze connections between entities.
+4. Facilitate data navigation and exploration.
+
+## Adding Galaxies
+
+Galaxies represent collections of related entities within your application. Here's how you can add galaxies:
+
+1. Navigate to the galaxy management section of your application.
+2. Choose the option to add a new galaxy.
+3. Define the criteria or rules for entities to be included in the galaxy.
+4. Save the galaxy configuration.
+
+## Getting Galaxies
+
+To retrieve galaxies from your application, follow similar steps as getting feeds or relations. Access the galaxy management section and retrieve the desired galaxies based on your criteria.
+
+## Utilizing Galaxies
+
+Utilize galaxies in your application to:
+
+1. Organize and categorize entities.
+2. Implement personalized recommendations or suggestions.
+3. Analyze clusters or groups of related data.
+4. Facilitate navigation and discovery for users.
+
+# Integrating MISP with Suricata
+
+Integrating MISP (Malware Information Sharing Platform & Threat Sharing) with Suricata, an open-source Intrusion Detection System (IDS), allows you to enhance your network security by leveraging threat intelligence. Here's a general overview of how to integrate MISP with Suricata:
+
+## Prerequisites:
+
+1. **MISP Instance**: Set up and configure a MISP instance. Ensure it's populated with relevant threat intelligence data.
+2. **Suricata Installation**: Install and configure Suricata on your network. Ensure it's actively monitoring network traffic.
+
+## Integration Steps:
+
+### 1. Install Required Dependencies:
+
+Ensure you have the necessary dependencies installed for communication between MISP and Suricata. This may include Python libraries or MISP modules for Suricata.
+
+### 2. Configure Suricata:
+
+Adjust Suricata's configuration to enable integration with MISP:
+
+- **Enable EVE JSON Logging**: Configure Suricata to log alerts in EVE JSON format. This facilitates easier parsing and processing of alerts by MISP.
+- **Define Output for Alerts**: Specify a location for Suricata to output alerts in EVE JSON format. Ensure it's accessible by scripts or tools handling the integration.
+
+### 3. Develop Integration Scripts:
+
+Develop scripts or tools to facilitate communication between MISP and Suricata:
+
+- **Alert Parsing Script**: Create a script to parse alerts generated by Suricata in EVE JSON format. Extract relevant information such as source IP, destination IP, timestamp, and alert description.
+- **MISP API Integration**: Develop scripts to interact with the MISP API. These scripts should be able to submit indicators extracted from Suricata alerts to MISP for enrichment and analysis.
+
+### 4. Enrich Suricata Alerts with MISP Data:
+
+Integrate the parsing script with MISP API calls. Use the extracted indicators from Suricata alerts to query MISP for additional threat intelligence data.
+
+### 5. Implement Response Mechanisms:
+
+Develop response mechanisms based on threat intelligence obtained from MISP:
+
+- **Alerting**: Configure alerts or notifications based on the severity and relevance of threat intelligence data obtained from MISP.
+- **Blocking or Mitigation**: Implement automated blocking or mitigation measures for identified threats, if feasible and appropriate.
+
+### 6. Testing and Validation:
+
+Thoroughly test the integration to ensure proper communication between MISP and Suricata. Validate the accuracy and effectiveness of threat intelligence enrichment and response mechanisms.
+
+### 7. Ongoing Maintenance and Monitoring:
+
+Regularly update threat intelligence feeds in MISP and review integration scripts for any necessary updates or improvements. Monitor system logs and alerts for any issues or anomalies.
+
+## Conclusion:
+
+Integrating MISP with Suricata allows you to leverage threat intelligence for enhanced network security. By enriching Suricata alerts with data from MISP, you can better identify and respond to potential threats in your network environment. Regular maintenance and monitoring are essential to ensure the effectiveness of the integration over time.
