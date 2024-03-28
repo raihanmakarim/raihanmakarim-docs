@@ -6,5 +6,6 @@
   "misp-security": {},
   "misp-components": {},
   "misp-api": {},
-  "misp-best-practice": {}
+  "misp-best-practice": {},
+  "misp-guide": {}
 }
