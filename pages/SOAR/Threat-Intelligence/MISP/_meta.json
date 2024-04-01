@@ -6,6 +6,13 @@
   "misp-security": {},
   "misp-components": {},
   "misp-api": {},
-  "misp-best-practice": {},
-  "misp-guide": {}
+  "misp-best-practice": {
+    "title": "MISP Best Practice"
+  },
+  "misp-guide": {
+    "title": "MISP Practical Guide"
+  },
+  "misp-classification": {
+    "title": "Classification in MISP"
+  }
 }
