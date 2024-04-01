@@ -12,5 +12,9 @@
   "SOAR": {
     "title": "SOAR",
     "type": "page"
+  },
+  "Storage": {
+    "title": "Storage",
+    "type": "page"
   }
 }
