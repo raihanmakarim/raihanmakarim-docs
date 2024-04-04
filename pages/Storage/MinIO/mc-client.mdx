@@ -1,0 +1,131 @@
+---
+title: MinIO Client (mc) Command Guide and Explanation
+---
+
+## Introduction
+MinIO Client (mc) is a command-line tool for interacting with MinIO servers. It provides various commands to perform operations such as file uploads, downloads, bucket management, and more. This guide aims to explain the usage of mc commands with examples.
+
+## Installation
+Before using mc, you need to install it on your system. Follow these steps to install mc:
+
+1. **Download mc**:
+   - Visit the MinIO website or GitHub repository to download the mc binary for your operating system.
+
+2. **Install mc**:
+   - Extract the downloaded archive and move the mc binary to a directory included in your system's PATH.
+
+## Configuration
+Once installed, configure mc to connect to your MinIO server:
+
+1. **Add MinIO Host**:
+   - Run the command:
+     ```
+     mc alias set myminio http://minio.example.com ACCESS_KEY SECRET_KEY
+     ```
+   - Replace "myminio" with your preferred alias, "http://minio.example.com" with the URL of your MinIO server, and "ACCESS_KEY" and "SECRET_KEY" with your MinIO access and secret keys.
+
+2. **List Configured Hosts**:
+   - To view configured MinIO hosts, run:
+     ```
+     mc alias list
+     ```
+
+## Usage
+Once configured, you can use mc commands to interact with your MinIO server:
+
+1. **Bucket Operations**:
+   - **Create Bucket**:
+     ```
+     mc mb myminio/mybucket
+     ```
+   - **List Buckets**:
+     ```
+     mc ls myminio
+     ```
+   - **Remove Bucket**:
+     ```
+     mc rb myminio/mybucket
+     ```
+
+2. **Object Operations**:
+   - **Upload Object**:
+     ```
+     mc cp myfile.txt myminio/mybucket
+     ```
+   - **Download Object**:
+     ```
+     mc cp myminio/mybucket/myfile.txt myfile.txt
+     ```
+   - **List Objects**:
+     ```
+     mc ls myminio/mybucket
+     ```
+   - **Remove Object**:
+     ```
+     mc rm myminio/mybucket/myfile.txt
+     ```
+
+3. **Additional Commands**:
+   - **Info**:
+     ```
+     mc admin info myminio
+     ```
+   - **Monitor**:
+     ```
+     mc admin trace myminio
+     ```
+
+4. **Policy Operations**:
+   - **Set Bucket Policy**:
+     ```
+     mc policy set myminio/mybucket policy.json
+     ```
+   - **Get Bucket Policy**:
+     ```
+     mc policy get myminio/mybucket
+     ```
+
+5. **Server Operations**:
+   - **Check Server Health**:
+     ```
+     mc admin heal myminio/mybucket
+     ```
+   - **Restart Server**:
+     ```
+     mc admin service restart myminio
+     ```
+
+6. **User Management**:
+   - **Add User**:
+     ```
+     mc admin user add myminio newuser newpassword
+     ```
+   - **List Users**:
+     ```
+     mc admin user list myminio
+     ```
+
+7. **Versioning Operations**:
+   - **Enable Versioning**:
+     ```
+     mc version enable myminio/mybucket
+     ```
+   - **Suspend Versioning**:
+     ```
+     mc version suspend myminio/mybucket
+     ```
+
+8. **Share Operations**:
+   - **Share Object**:
+     ```
+     mc share download myminio/mybucket/myfile.txt
+     ```
+
+9. **Replication Operations**:
+   - **Configure Replication**:
+     ```
+     mc replicate add myminio/mybucket destminio/destbucket
+     ```
+
+These are additional commands available in the MinIO Client (mc) tool for interacting with MinIO servers. You can explore the complete list of commands and their usage by referring to the MinIO Client documentation or by running `mc --help` in your terminal.
+

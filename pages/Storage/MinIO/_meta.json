@@ -3,5 +3,8 @@
   "bucket": {},
   "api": {
     "title": "Utilizing the S3 API with MinIO: A Detailed Guide"
-  }
+  },
+  "backup-net": {},
+  "mc-client": {},
+  "S3-compatible": {}
 }
