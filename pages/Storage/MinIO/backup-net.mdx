@@ -1,0 +1,38 @@
+---
+title: Backup to S3-Compatible Cloud Storage with Veritas NetBackup
+---
+## Problem
+Encountering an error when attempting to back up to a private S3-compatible cloud storage with Veritas NetBackup. The error message indicates that the authorization mechanism provided is not supported, and AWS4-HMAC-SHA256 is required. However, the cloud storage only supports AWS signature version 2.
+
+## Solution Overview
+This guide provides steps to set up and configure Veritas NetBackup to back up data to a private S3-compatible cloud storage using MinIO as an example.
+
+## Steps
+
+### 1. Confirm Signature Version Support
+- Verify with the S3-compatible cloud storage provider whether they support signature version 2.
+
+### 2. Set Up MinIO (S3-Compatible Cloud Storage)
+1. Download MinIO from [MinIO website](https://min.io/).
+2. Install MinIO by following the provided instructions.
+3. Create a bucket named "test" on MinIO.
+
+### 3. Configure Veritas NetBackup
+1. Install and configure Veritas NetBackup on your system.
+2. Ensure that NetBackup has access to the storage where MinIO is installed.
+
+### 4. Create Storage Unit in NetBackup
+1. Open the NetBackup Administration Console.
+2. Create a new storage unit for the S3-compatible storage.
+3. Specify the storage unit type as "S3" and provide the necessary connection details, including the MinIO server address, access credentials, and bucket name.
+
+### 5. Configure Backup Policies
+1. Define backup policies in NetBackup to specify what data to back up and how often.
+2. Associate the storage unit created in the previous step with the backup policies to designate MinIO as the destination for backups.
+
+### 6. Run Backup Jobs
+1. Initiate backup jobs in NetBackup to start backing up data to MinIO.
+2. Monitor the backup jobs to ensure they complete successfully and verify that data is being backed up to MinIO as expected.
+
+## Conclusion
+Following these steps should help you configure Veritas NetBackup to back up data to a private S3-compatible cloud storage using MinIO. Make sure to replace placeholder values (such as IP addresses, usernames, and passwords) with your actual configuration details. If you encounter any issues, refer to the provided documentation or contact support for assistance.
