@@ -1,0 +1,79 @@
+# Greedy Algorithm
+
+## Introduction
+The Greedy Algorithm is a simple yet powerful problem-solving technique used in algorithm design. It is often employed to find an optimal solution to optimization problems where making a series of locally optimal choices leads to a globally optimal solution.
+
+## Key Characteristics
+1. **Greedy Choice Property**: At each step of the algorithm, the locally optimal choice is made without considering future consequences. The algorithm selects the best available option at the current stage, aiming to maximize or minimize a certain objective function.
+
+2. **No Backtracking**: Unlike backtracking algorithms, which explore all possible solutions and backtrack to find the best one, greedy algorithms do not revisit previous decisions. Once a choice is made, it is considered final, and the algorithm proceeds to the next step.
+
+3. **Efficiency**: Greedy algorithms are generally efficient in terms of time complexity since they often involve a linear or near-linear number of operations. However, their efficiency depends on the problem structure and the chosen greedy strategy.
+
+## Steps to Implement
+The general steps to implement a greedy algorithm are as follows:
+1. **Define the Problem**: Clearly define the problem and identify the objective function to be optimized.
+2. **Identify Greedy Choices**: Determine the set of choices available at each step and the criteria for selecting the best choice.
+3. **Apply Greedy Strategy**: At each step, choose the option that maximizes or minimizes the objective function based on the greedy choice property.
+4. **Update Solution**: Update the solution with the selected choice and move to the next step.
+5. **Terminate**: Repeat steps 3 and 4 until a complete solution is obtained or the termination condition is met.
+
+## Examples of Greedy Algorithms
+1. **Fractional Knapsack**: Given a set of items with weights and values, maximize the total value of items that can be accommodated in a knapsack of limited capacity.
+2. **Dijkstra's Shortest Path**: Find the shortest path between two vertices in a weighted graph, where the sum of edge weights is minimized.
+3. **Minimum Spanning Tree (MST)**: Construct a tree that spans all the vertices of a graph with the minimum possible total edge weight.
+4. **Huffman Coding**: Construct an optimal prefix-free binary encoding of characters based on their frequencies in a text, minimizing the total encoded length.
+
+## Pros and Cons
+- **Pros**:
+  - Simple and easy to implement.
+  - Often provides fast and efficient solutions for optimization problems.
+  - Well-suited for problems with optimal substructure and the greedy choice property.
+- **Cons**:
+  - Not guaranteed to find the globally optimal solution in all cases.
+  - May result in suboptimal solutions if the greedy choice property does not hold.
+  - Requires careful analysis and proof of correctness for each problem instance.
+
+## Conclusion
+The Greedy Algorithm is a valuable tool in algorithm design for solving optimization problems by making locally optimal choices. While it offers simplicity and efficiency, it also requires a thorough understanding of the problem structure and careful consideration of the greedy choice property. By leveraging its strengths and addressing its limitations, the Greedy Algorithm can be applied effectively to a wide range of problems in computer science and beyond.
+
+
+## Code Example
+```js
+
+function fractionalKnapsack(weights, values, capacity) {
+    let totalValue = 0;
+    const n = weights.length;
+
+    // Calculate value-to-weight ratio for each item
+    const ratios = values.map((value, index) => ({
+        index,
+        ratio: value / weights[index]
+    }));
+
+    // Sort items by value-to-weight ratio in descending order
+    ratios.sort((a, b) => b.ratio - a.ratio);
+
+    for (const { index, ratio } of ratios) {
+        if (weights[index] <= capacity) {
+            // Take the whole item if it fits in the knapsack
+            totalValue += values[index];
+            capacity -= weights[index];
+        } else {
+            // Take a fraction of the item if it doesn't fit completely
+            totalValue += (capacity / weights[index]) * values[index];
+            break; // Knapsack is full
+        }
+    }
+
+    return totalValue;
+}
+
+// Example usage:
+const weights = [10, 20, 30];
+const values = [60, 100, 120];
+const capacity = 50;
+
+const maxValue = fractionalKnapsack(weights, values, capacity);
+console.log("Maximum value that can be obtained:", maxValue); // Output: 240
+```
